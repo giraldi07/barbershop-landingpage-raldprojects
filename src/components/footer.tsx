@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
 import { Scissors, Phone, Mail, Instagram, Facebook, MapPin } from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-background border-t">
@@ -67,11 +67,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t">
-          <p className="text-center text-muted-foreground text-sm">
-            © {currentYear} BarberStyle. All rights reserved.
+        {/* Copyright Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t text-center"
+        >
+          <p className="text-xs sm:text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()}{" "}
+            <a
+              href="https://raldprojects.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors duration-300"
+            >
+              raldprojects
+            </a>
+            . All rights reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

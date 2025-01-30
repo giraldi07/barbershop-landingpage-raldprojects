@@ -6,7 +6,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -28,7 +27,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -99,6 +98,8 @@ button:focus-visible {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+  
+  /* Dark mode styles */
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -127,6 +128,7 @@ button:focus-visible {
   }
 }
 
+/* Default styling for body and elements using the custom colors */
 @layer base {
   * {
     @apply border-border;

@@ -62,7 +62,7 @@ function App() {
   ];
 
   return (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+    <ThemeProvider>
       <div className="min-h-screen flex flex-col">
         <Navbar />
         
@@ -73,7 +73,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80"
                 alt="Barbershop interior"
-                className="w-full h-full object-cover opacity-20"
+                className="w-full h-full object-cover opacity-80"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-background/60 to-background"></div>
             </div>

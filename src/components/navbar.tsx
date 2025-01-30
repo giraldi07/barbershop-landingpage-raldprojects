@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Scissors } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { title: "Home", href: "#" },
+    { title: "Home", href: "/" },
     { title: "Services", href: "#services" },
     { title: "Location", href: "#location" },
     { title: "Book Now", href: "#book" },
@@ -19,8 +18,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="#" className="flex items-center space-x-2">
-              <Scissors className="h-6 w-6" />
+            <a href="https://raldprojects.vercel.app/" className="flex items-center space-x-2">
+              <Scissors className="h-6 w-6" aria-label="Scissors Icon for BarberStyle" />
               <span className="font-bold text-lg md:text-xl">BarberStyle</span>
             </a>
           </div>
@@ -42,14 +41,16 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <div className="flex items-center md:hidden">
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="ml-2"
+            <button
               onClick={() => setIsOpen(!isOpen)}
+              className="ml-2" // Menambahkan warna untuk teks ikon sesuai tema
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+              {isOpen ? (
+                <X className="h-4 w-4 text-gray-50 dark:text-indigo-400" />
+              ) : (
+                <Menu className="h-4 w-4 text-gray-50 dark:text-indigo-400" />
+              )}
+            </button>
           </div>
         </div>
       </div>
